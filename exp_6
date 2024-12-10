@@ -1,0 +1,84 @@
+low:
+#include<stdio.h>
+void evenodd(int num){
+    if (num %2==0){
+        printf("the entered number is even.\n");       
+    }
+    else{
+        printf("the entered number is odd.\n");
+    }
+}
+int main(){
+    int num;
+    scanf("%d",&num);
+    evenodd(num);
+    return 0;
+}
+=============================================================================================================================================================================================================
+medium:
+#include<stdio.h>
+int findlargest(int arr[], int size){
+    int largest =arr[0];
+    for (int i=1;i<size;i++){
+        if (arr[i]>largest){
+            largest =arr[i];
+        }
+    }
+    return largest ;
+}
+int main (){
+    int size ;
+    scanf("%d",&size);
+    int arr[size];
+    for (int i=0;i<size;i++){
+        printf("element %d\n",i);
+        scanf("%d",&arr[i]);
+    }
+    int largest =findlargest(arr,size);
+    printf("the largest numbers is :%d\n",largest);
+    return 0;
+}
+===============================================================================================================================================================================================================
+high:
+#include<stdio.h>
+void inputmatrix(int matrix[10][10],int row ,int cols){
+    for (int i=0;i<row;i++){
+        for (int j=0;j<cols;j++){
+            
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+}
+void displaymatrix ( int matrix[10][10],int rows,int cols){
+    printf("matrix:\n");
+    for (int i= 0 ; i<rows ; i++){
+        for(int j= 0 ; j<cols ; j++){
+            printf(" %d ",matrix[i][j]);
+        }
+    printf("\n");
+    }
+}
+void addmatrix(int matrix1[10][10],int matrix2[10][10],int result[10][10],int rows,int cols){
+    for(int i= 0 ; i<rows ; i++){
+        for (int j= 0 ; j<cols ; j++){
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+            
+        }
+    }
+}
+int main(){
+    int rows ,cols;
+    printf("enter row and colum\n");
+    scanf("%d %d ",&rows,&cols);
+    int matrix1[10][10],matrix2[10][10],result[10][10];
+    inputmatrix (matrix1,rows,cols);
+    inputmatrix(matrix2,rows,cols);
+    displaymatrix(matrix1,rows,cols);
+    displaymatrix(matrix2,rows,cols);
+    addmatrix(matrix1,matrix2,result,rows,cols);
+    printf("\n the result of matrix addition is :\n");
+    displaymatrix(result,rows,cols);
+    return 0;
+}
+
+=====================================================================================================================================================================================================================
